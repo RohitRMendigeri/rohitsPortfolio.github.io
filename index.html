@@ -3,61 +3,1007 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>My Portfolio | Tech Enthusiast & Developer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #4a89dc;
+            --secondary-color: #3d3d3d;
+            --accent-color: #f39c12;
+            --light-bg: #f8f9fa;
+            --dark-bg: #2c3e50;
+            --text-color: #333;
+            --text-light: #6c757d;
+            --border-color: #e9ecef;
+            --card-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s ease;
+            --netflix-red: #E50914;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--light-bg);
+        }
+
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        a:hover {
+            color: #2c6dbb;
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 5px;
+            font-weight: 500;
+            transition: var(--transition);
+            margin-top: 15px;
+        }
+
+        .btn:hover {
+            background-color: #2c6dbb;
+            transform: translateY(-2px);
+            text-decoration: none;
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--dark-bg) 0%, #34495e 100%);
+            color: white;
+            padding: 100px 0 60px;
+            text-align: center;
+            position: relative;
+        }
+
+        .profile-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .profile-pic {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid white;
+            margin-bottom: 20px;
+            background-color: #eee;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 50px;
+            color: var(--dark-bg);
+        }
+
+        header h1 {
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+        }
+
+        .typing-text {
+            font-size: 1.3rem;
+            color: #eee;
+            overflow: hidden;
+            white-space: nowrap;
+            margin: 0 auto;
+            letter-spacing: 0.15em;
+            /* animation: typing 3.5s steps(40, end); */
+        }
+
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+
+        /* Navigation */
+        nav {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+
+        nav ul li a {
+            display: block;
+            color: var(--secondary-color);
+            font-weight: 500;
+            padding: 15px 20px;
+            transition: var(--transition);
+        }
+
+        nav ul li a:hover {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        nav ul li a.active {
+            color: var(--primary-color);
+            border-bottom: 3px solid var(--primary-color);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+            font-size: 2rem;
+            color: var(--secondary-color);
+        }
+
+        .section-title:after {
+            content: "";
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--accent-color);
+        }
+
+        /* About Section */
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .about-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--secondary-color);
+        }
+
+        .about-text p {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+            color: var(--text-color);
+        }
+
+        /* Education Section */
+        .education {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .education-item {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 30px;
+            transition: var(--transition);
+            border-left: 5px solid var(--primary-color);
+        }
+
+        .education-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .education-item h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        .education-meta {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-bottom: 15px;
+            color: var(--text-light);
+        }
+
+        /* Projects Section */
+        .projects-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            transition: var(--transition);
+            border-top: 5px solid var(--primary-color);
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .project-header {
+            padding: 20px 25px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .project-header h3 {
+            font-size: 1.4rem;
+            margin-bottom: 5px;
+            color: var(--secondary-color);
+        }
+
+        .project-date {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        .project-body {
+            padding: 25px;
+        }
+
+        .technologies {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 15px 0;
+        }
+
+        .tech-tag {
+            background-color: rgba(74, 137, 220, 0.1);
+            border-radius: 15px;
+            padding: 5px 12px;
+            margin-right: 8px;
+            margin-bottom: 8px;
+            font-size: 0.85rem;
+            color: var(--primary-color);
+            transition: var(--transition);
+        }
+
+        .tech-tag:hover {
+            background-color: rgba(74, 137, 220, 0.2);
+        }
+
+        .project-body ul {
+            padding-left: 20px;
+            margin: 15px 0;
+        }
+
+        .project-body ul li {
+            margin-bottom: 8px;
+        }
+
+        /* Skills Section */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .skill-category {
+            background-color: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: var(--card-shadow);
+            transition: var(--transition);
+        }
+
+        .skill-category:hover {
+            transform: translateY(-5px);
+        }
+
+        .skill-category h3 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .skill-category h3:after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background-color: var(--accent-color);
+        }
+
+        .skill-list {
+            list-style: none;
+        }
+
+        .skill-list li {
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+        }
+
+        .skill-list li i {
+            color: var(--primary-color);
+            margin-right: 10px;
+        }
+
+        /* Domain Expertise Section */
+        .domain-case-studies {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .case-study {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 40px;
+            transition: var(--transition);
+        }
+
+        .case-study:hover {
+            transform: translateY(-5px);
+        }
+
+        .case-study h3 {
+            font-size: 1.4rem;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .case-study h3 span {
+            font-size: 1.8rem;
+            margin-right: 15px;
+        }
+
+        .case-problem {
+            font-weight: 500;
+            margin: 20px 0 15px;
+            padding: 10px 15px;
+            background-color: rgba(74, 137, 220, 0.1);
+            border-radius: 5px;
+        }
+
+        .case-data {
+            margin: 15px 0;
+        }
+
+        .case-strategy {
+            margin: 20px 0;
+        }
+
+        .strategy-title {
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--secondary-color);
+        }
+
+        .strategy-item {
+            display: flex;
+            margin-bottom: 10px;
+            align-items: flex-start;
+            padding-left: 15px;
+        }
+
+        .strategy-technique {
+            font-weight: 600;
+            margin-right: 10px;
+            min-width: 180px;
+            color: var(--primary-color);
+        }
+
+        .case-impact {
+            margin: 20px 0 5px;
+            padding: 10px 15px;
+            background-color: rgba(243, 156, 18, 0.1);
+            border-radius: 5px;
+            font-weight: 500;
+        }
+
+        .netflix-logo {
+            width: 100px;
+            margin-bottom: 20px;
+        }
+
+        .netflix-section {
+            margin-bottom: 40px;
+        }
+
+        .netflix-section h3 {
+            color: var(--netflix-red);
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        /* Contact Section */
+        .contact-container {
+            display: flex;
+            flex-wrap: wrap;
+            max-width: 900px;
+            margin: 0 auto;
+            gap: 30px;
+        }
+
+        .contact-info {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .contact-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--secondary-color);
+        }
+
+        .contact-info p {
+            margin-bottom: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .contact-item i {
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary-color);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin-right: 15px;
+        }
+
+        .contact-form {
+            flex: 1;
+            min-width: 300px;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: var(--card-shadow);
+        }
+
+        .contact-form h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--secondary-color);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid var(--border-color);
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-bg);
+            color: white;
+            text-align: center;
+            padding: 40px 0;
+        }
+
+        .social-links {
+            margin: 25px 0;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            margin: 0 8px;
+            font-size: 1.2rem;
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+
+        .footer-nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+
+        .footer-nav a {
+            color: #ccc;
+            margin: 0 15px;
+            transition: var(--transition);
+        }
+
+        .footer-nav a:hover {
+            color: white;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            header {
+                padding: 60px 0;
+            }
+
+            header h1 {
+                font-size: 2.2rem;
+            }
+
+            .typing-text {
+                font-size: 1.1rem;
+            }
+
+            .projects-container {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-container {
+                grid-template-columns: 1fr;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+            }
+
+            nav ul li {
+                flex-basis: 50%;
+                text-align: center;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav ul li {
+                flex-basis: 100%;
+            }
+
+            .profile-pic {
+                width: 120px;
+                height: 120px;
+            }
+
+            .education-meta {
+                flex-direction: column;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
-        <h1>Hello, I'm [Your Name] 👋</h1>
-        <p>I am passionate about technology and problem-solving. Here's a glimpse of my work:</p>
+        <div class="container">
+            <div class="profile-container">
+                <!-- <div class="profile-pic">
+                    <i class="fas fa-user"></i>
+                </div> -->
+                <h1>Rohit Mendigeri</h1>
+                <p class="typing-text">Computer Science Student</p>
+                <a href="#contact" class="btn">Let's Connect <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
     </header>
 
-    <section>
-        <h2>🛠️ Projects</h2>
+    <nav>
         <ul>
-            <li><strong>Project 1</strong>: A short description of your project1.</li>
-            <li><strong>Project 2</strong>: A short description of another project2.</li>
+            <li><a href="#about" class="active">About Me</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#domain">Domain Expertise</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
+    </nav>
 
-        <h2>🚀 Skills</h2>
-        <ul>
-            <li>C++, Python, JavaScript</li>
-            <li>Data Structures and Algorithms</li>
-            <li>Web Development (React.js, Node.js)</li>
-        </ul>
+    <main>
+        <section id="about">
+            <div class="container">
+                <h2 class="section-title">About Me</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <h3>Hello, I'm Rohit!</h3>
+                        <p>I'm a Computer Science Engineer with a passion for building innovative solutions. My work focuses on machine learning and autonomous systems, where I enjoy tackling complex challenges.</p>
+                        <p>When I'm not coding, I explore new technologies, contribute to open-source projects, or share knowledge with the community. My goal is to create systems that make a meaningful impact.</p>
+                        <a href="#projects" class="btn">View My Work <i class="fas fa-code"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-        <h2>🌐 Find Me Online</h2>
-        <ul>
-            <li><a href="https://github.com/your-github-username" target="_blank">GitHub</a></li>
-            <li><a href="https://linkedin.com/in/your-linkedin-profile" target="_blank">LinkedIn</a></li>
-        </ul>
+        <section id="education" style="background-color: #f1f5f9;">
+            <div class="container">
+                <h2 class="section-title">Education</h2>
+                <div class="education">
+                    <div class="education-item">
+                        <h3>KLE Technological University</h3>
+                        <div class="education-meta">
+                            <span><i class="fas fa-graduation-cap"></i> B.E. in Computer Science and Engineering</span>
+                            <span><i class="fas fa-star"></i> 9.03 CGPA</span>
+                        </div>
 
-        <h2>Portfolio Topic</h2>
-        <dl>
-            <dt>Course Name</dt>
-            <dd>Algorithmic Problem Solving</dd>
+                        <p>My coursework included advanced algorithms, machine learning, data structures, computer vision, and software engineering practices that have been instrumental in my professional journey.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-            <dt>Course Code</dt>
-            <dd>Course Code Placeholder</dd>
+        <section id="projects">
+            <div class="container">
+                <h2 class="section-title">Projects & Experience</h2>
+                <div class="projects-container">
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3>Multimodal Transformer Framework</h3>
+                        </div>
+                        <div class="project-body">
+                            <div class="technologies">
+                                <span class="tech-tag">Machine Learning</span>
+                                <span class="tech-tag">Computer Vision</span>
+                                <span class="tech-tag">Autonomous Systems</span>
+                            </div>
+                            <ul>
+                                <li>Developed a lightweight multimodal transformer framework for estimating image differences in autonomous systems.</li>
+                                <li>Utilized the BDD100K dataset and Vision Transformer (ViT) for feature extraction, integrating multimodal models like OpenGVLab/Mini-InternVL-Chat-2B-V1-5.</li>
+                                <li>Designed the model for real-time analysis with low power usage, ensuring scalability for autonomous driving and robotic vision.</li>
+                            </ul>
+                        </div>
+                    </div>
 
-            <dt>Name</dt>
-            <dd>Your Name</dd>
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3>NVIDIA - Traffic Light Detection</h3>
+                            <div class="project-date">January 2025 - Present | Remote</div>
+                        </div>
+                        <div class="project-body">
+                            <div class="technologies">
+                                <span class="tech-tag">Computer Vision</span>
+                                <span class="tech-tag">YOLOX</span>
+                                <span class="tech-tag">Autonomous Driving</span>
+                            </div>
+                            <ul>
+                                <li>Developing a YOLOX-based traffic light detection framework for autonomous driving.</li>
+                                <li>Analyzing Bosch Small Traffic Lights Dataset with augmentation techniques.</li>
+                                <li>Conducting experiments to evaluate YOLOX performance under diverse lighting conditions.</li>
+                            </ul>
+                        </div>
+                    </div>
 
-            <dt>SRN</dt>
-            <dd>Your SRN</dd>
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3>Online Course Enrollment System</h3>
+                            <div class="project-date">December 2024 - January 2025</div>
+                        </div>
+                        <div class="project-body">
+                            <div class="technologies">
+                                <span class="tech-tag">ReactJS</span>
+                                <span class="tech-tag">Express</span>
+                                <span class="tech-tag">MySQL</span>
+                                <span class="tech-tag">CSS</span>
+                            </div>
+                            <ul>
+                                <li>Developed an e-Course Enrollment System with user authentication, credit management, and course recommendations.</li>
+                                <li>Built a responsive UI with React.js and optimized backend with Node.js, Express.js, and MySQL.</li>
+                                <li>Implemented user-friendly interface that improved enrollment completion rates by 35%.</li>
+                            </ul>
+                        </div>
+                    </div>
 
-            <dt>Course Instructor</dt>
-            <dd>Instructor Name Placeholder</dd>
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3>Poetry Generation with GPT-Neo</h3>
+                        </div>
+                        <div class="project-body">
+                            <div class="technologies">
+                                <span class="tech-tag">Machine Learning</span>
+                                <span class="tech-tag">Deep Learning</span>
+                                <span class="tech-tag">NLP</span>
+                            </div>
+                            <ul>
+                                <li>Fine-tuned GPT-Neo for poetry generation, enhancing rhyme structure and thematic consistency.</li>
+                                <li>Applied top-k sampling and temperature scaling to boost fluency and creativity.</li>
+                                <li>Achieved a 12.77% improvement in semantic coherence over GPT-4.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-            <dt>University</dt>
-            <dd>Your University Name</dd>
+        <section id="skills" style="background-color: #f1f5f9;">
+            <div class="container">
+                <h2 class="section-title">Technical Skills</h2>
+                <div class="skills-container">
+                    <div class="skill-category">
+                        <h3>Programming Languages</h3>
+                        <ul class="skill-list">
+                            <li><i class="fas fa-check-circle"></i> C/C++ (Advanced)</li>
+                            <li><i class="fas fa-check-circle"></i> Python (Advanced)</li>
+                            <li><i class="fas fa-check-circle"></i> JavaScript (Intermediate)</li>
+                            <li><i class="fas fa-check-circle"></i> HTML/CSS (Intermediate)</li>
+                        </ul>
+                    </div>
 
-            <dt>Portfolio Topic/Domain</dt>
-            <dd>Google</dd>
-        </dl>
+                    <div class="skill-category">
+                        <h3>Frameworks & Libraries</h3>
+                        <ul class="skill-list">
+                            <li><i class="fas fa-check-circle"></i> React.js</li>
+                            <li><i class="fas fa-check-circle"></i> Node.js</li>
+                            <li><i class="fas fa-check-circle"></i> Express.js</li>
+                            <li><i class="fas fa-check-circle"></i> PyTorch</li>
+                            <li><i class="fas fa-check-circle"></i> TensorFlow</li>
+                        </ul>
+                    </div>
 
-        <blockquote>“The only way to do great work is to love what you do.” – Steve Jobs</blockquote>
-    </section>
+                    <div class="skill-category">
+                        <h3>Databases</h3>
+                        <ul class="skill-list">
+                            <li><i class="fas fa-check-circle"></i> MySQL</li>
+                            <li><i class="fas fa-check-circle"></i> MongoDB</li>
+                            <li><i class="fas fa-check-circle"></i> PostgreSQL</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3>Developer Tools</h3>
+                        <ul class="skill-list">
+                            <li><i class="fas fa-check-circle"></i> Git & GitHub</li>
+                            <li><i class="fas fa-check-circle"></i> Docker</li>
+                            <li><i class="fas fa-check-circle"></i> VS Code</li>
+                            <li><i class="fas fa-check-circle"></i> Jupyter Notebooks</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="domain">
+            <div class="container">
+                <h2 class="section-title">Domain Expertise</h2>
+                <div class="netflix-section">
+                    <h3>Netflix</h3>
+                    <p>Netflix is a streaming service that offers a wide variety of award-winning TV shows, movies, anime, documentaries, and more – on thousands of internet-connected devices.</p>
+                    <p>You can watch as much as you want, whenever you want, without a single ad – all for one low monthly price. There's always something new to discover, and new TV shows and movies are added every week!</p>
+                </div>
+                <h2 class="section-title">Business Case Studies</h2>
+                <div class="domain-case-studies">
+                    <div class="case-study">
+                        <h3><span>🎯</span> Real-Time Recommendations</h3>
+                        <p class="case-problem"><strong>Problem:</strong> Netflix needs to recommend shows instantly after a user finishes/pause watching, based on preferences and trends.</p>
+                        <p class="case-data"><strong>Data Handled:</strong> Watch history, session metadata, regional preferences, collaborative similarity scores.</p>
+                        <div class="case-strategy">
+                            <p class="strategy-title">Solution Strategy:</p>
+                            <div class="strategy-item">
+                                <span class="strategy-technique">Min-Heap / Priority Queue:</span>
+                                <span>Rank and sort content by recommendation score.</span>
+                            </div>
+                            <div class="strategy-item">
+                                <span class="strategy-technique">HashMaps:</span>
+                                <span>For fast access to user viewing habits and cached preferences.</span>
+                            </div>
+                            <div class="strategy-item">
+                                <span class="strategy-technique">Graphs:</span>
+                                <span>To model and traverse user-content similarity (collaborative filtering).</span>
+                            </div>
+                            <div class="strategy-item">
+                                <span class="strategy-technique">Bloom Filters:</span>
+                                <span>Quickly check if a user has already watched something.</span>
+                            </div>
+                        </div>
+                        <p class="case-impact"><strong>Impact:</strong> Drives engagement, content discovery, retention, and binge-watching.</p>
+                    </div>
+
+                    <div class="case-study">
+                        <h3><span>🧪</span> A/B Testing Engine</h3>
+                        <p class="case-problem"><strong>Problem:</strong> Netflix tests thumbnails, autoplay videos, and layouts across user segments to find the most effective designs.</p>
+                        <p class="case-data"><strong>Data Handled:</strong> Clicks, impressions, device types, regions, test groups.</p>
+                        <div class="case-strategy">
+                            <p class="strategy-title">Solution Strategy:</p>
+                            <div class="strategy-item">
+                                <span class="strategy-technique">Tries:</span>
+                                <span>Efficient comparison and grouping of UI variants.</span>
+                            </div>
+                            <div class="strategy-item">
+                                <span class="strategy-technique">Hash Tables:</span>
+                                <span>Constant-time access to test group configurations.</span>
+                            </div>
+                            <div class="strategy-item">
+                                <span class="strategy-technique">Sliding Window:</span>
+                                <span>Track performance (CTR, engagement) over recent interactions.</span>
+                            </div>
+                        </div>
+                        <p class="case-impact"><strong>Impact:</strong> Improves click-through rates, enhances personalization, and informs design choices with real metrics.</p>
+                    </div>
+
+                    <div class="case-study">
+                        <h3><span>📺</span> Adaptive Bitrate Streaming</h3>
+                        <p class="case-problem"><strong>Problem:</strong> Stream smoothly on all networks by adapting video quality in real-time.</p>
+                        <p class="case-data"><strong>Data Handled:</strong> User bandwidth, network fluctuation, resolution options.</p>
+                        <div class="case-strategy">
+                            <p class="strategy-title">Solution Strategy:</p>
+                            <div class="strategy-item">
+                                <span class="strategy-technique">Sliding Window:</span>
+                                <span>Averages bandwidth usage to make bitrate decisions.</span>
+                            </div>
+                            <div class="strategy-item">
+                                <span class="strategy-technique">Leaky Bucket:</span>
+                                <span>Throttle retries and control bandwidth usage.</span>
+                            </div>
+                            <div class="strategy-item">
+                                <span class="strategy-technique">Circular Buffer:</span>
+                                <span>Prefetch video chunks to avoid buffering.</span>
+                            </div>
+                        </div>
+                        <p class="case-impact"><strong>Impact:</strong> Enhances user experience, reduces buffering, and enables 4K streaming on low bandwidth.</p>
+                    </div>
+
+                    <div class="case-study">
+                        <h3><span>📈</span> Trending Titles & Top-K by Region</h3>
+                        <p class="case-problem"><strong>Problem:</strong> Show top trending titles per country, language, and demographic.</p>
+                        <p class="case-data"><strong>Data Handled:</strong> View count, region data, device, rewatch rate, session time.</p>
+                        <div class="case-strategy">
+                            <p class="strategy-title">Solution Strategy:</p>
+                            <div class="strategy-item">
+                                <span class="strategy-technique">Min-Heap:</span>
+                                <span>Efficiently maintain Top-K trending titles.</span>
+                            </div>
+                            <div class="strategy-item">
+                                <span class="strategy-technique">HashMaps:</span>
+                                <span>Real-time content view counters.</span>
+                            </div>
+                            <div class="strategy-item">
+                                <span class="strategy-technique">GeoHashing:</span>
+                                <span>Quickly group users by location for regional trends.</span>
+                            </div>
+                            <div class="strategy-item">
+                                <span class="strategy-technique">Graphs:</span>
+                                <span>Map user clusters to trending content.</span>
+                            </div>
+                        </div>
+                        <p class="case-impact"><strong>Impact:</strong> Promotes local content, adapts homepage to region-specific preferences, drives regional subscriptions.</p>
+                    </div>
+
+                    <div class="case-study">
+                        <h3><span>🕹️</span> Interactive Movies (e.g., Bandersnatch)</h3>
+                        <p class="case-problem"><strong>Problem:</strong> Track millions of possible paths users take in interactive storytelling.</p>
+                        <p class="case-data"><strong>Data Handled:</strong> Choices per session, path frequency, drop-off points.</p>
+                        <div class="case-strategy">
+                            <p class="strategy-title">Solution Strategy:</p>
+                            <div class="strategy-item">
+                                <span class="strategy-technique">Directed Acyclic Graph (DAG):</span>
+                                <span>Story structure with choice-based paths.</span>
+                            </div>
+                            <div class="strategy-item">
+                                <span class="strategy-technique">DFS / BFS:</span>
+                                <span>Analyze most frequent or completed paths.</span>
+                            </div>
+                            <div class="strategy-item">
+                                <span class="strategy-technique">Tries:</span>
+                                <span>Compress common choice paths across users.</span>
+                            </div>
+                            <div class="strategy-item">
+                                <span class="strategy-technique">Run-Length Encoding (RLE):</span>
+                                <span>Efficiently store repeated choice sequences.</span>
+                            </div>
+                        </div>
+                        <p class="case-impact"><strong>Impact:</strong> Created a new content format, personalized user experience, and allowed experimentation in storytelling.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" style="background-color: #f1f5f9;">
+            <div class="container">
+                <h2 class="section-title">Get in Touch</h2>
+                <div class="contact-container">
+                    <div class="contact-info">
+                        <h3>Let's Connect</h3>
+                        <p>I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.</p>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>rohitmendigeri@gmail.com</span>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Dharwad , Karnataka</span>
+                        </div>
+                    </div>
+                    <div class="contact-form">
+                        <h3>Send a Message</h3>
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Message <i class="fas fa-paper-plane"></i></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="social-links">
+                <a href="https://in.linkedin.com/in/rohit-mendigeri-a31b122a9" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/RohitRMendigeri" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+            </div>
+            <div class="footer-nav">
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#skills">Skills</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <p>&copy; 2025 Rohit Mendigeri. All rights reserved.</p>
+        </div>
+    </footer>
 </body>
 </html>
