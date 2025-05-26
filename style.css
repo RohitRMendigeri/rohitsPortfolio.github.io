@@ -9,7 +9,6 @@
     --border-color: #e9ecef;
     --card-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
     --transition: all 0.3s ease;
-    --netflix-red: #E50914;
 }
 
 * {
@@ -340,97 +339,6 @@ section {
 .skill-list li i {
     color: var(--primary-color);
     margin-right: 10px;
-}
-
-/* Domain Expertise Section */
-.domain-case-studies {
-    max-width: 900px;
-    margin: 0 auto;
-}
-
-.case-study {
-    background-color: white;
-    border-radius: 10px;
-    padding: 30px;
-    box-shadow: var(--card-shadow);
-    margin-bottom: 40px;
-    transition: var(--transition);
-}
-
-.case-study:hover {
-    transform: translateY(-5px);
-}
-
-.case-study h3 {
-    font-size: 1.4rem;
-    color: var(--secondary-color);
-    margin-bottom: 15px;
-    display: flex;
-    align-items: center;
-}
-
-.case-study h3 span {
-    font-size: 1.8rem;
-    margin-right: 15px;
-}
-
-.case-problem {
-    font-weight: 500;
-    margin: 20px 0 15px;
-    padding: 10px 15px;
-    background-color: rgba(74, 137, 220, 0.1);
-    border-radius: 5px;
-}
-
-.case-data {
-    margin: 15px 0;
-}
-
-.case-strategy {
-    margin: 20px 0;
-}
-
-.strategy-title {
-    font-weight: 600;
-    margin-bottom: 10px;
-    color: var(--secondary-color);
-}
-
-.strategy-item {
-    display: flex;
-    margin-bottom: 10px;
-    align-items: flex-start;
-    padding-left: 15px;
-}
-
-.strategy-technique {
-    font-weight: 600;
-    margin-right: 10px;
-    min-width: 180px;
-    color: var(--primary-color);
-}
-
-.case-impact {
-    margin: 20px 0 5px;
-    padding: 10px 15px;
-    background-color: rgba(243, 156, 18, 0.1);
-    border-radius: 5px;
-    font-weight: 500;
-}
-
-.netflix-logo {
-    width: 100px;
-    margin-bottom: 20px;
-}
-
-.netflix-section {
-    margin-bottom: 40px;
-}
-
-.netflix-section h3 {
-    color: var(--netflix-red);
-    font-size: 2rem;
-    margin-bottom: 20px;
 }
 
 /* Contact Section */
