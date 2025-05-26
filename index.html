@@ -11,9 +11,16 @@
     <header>
         <div class="container">
             <div class="profile-container">
+                <div class="profile-pic">
+                    <i class="fas fa-user"></i>
+                </div>
                 <h1>Rohit Mendigeri</h1>
-                <p class="typing-text">Computer Science Student</p>
-                <a href="#contact" class="btn">Let's Connect <i class="fas fa-arrow-right"></i></a>
+                <p class="typing-text">Computer Science Student & Developer</p>
+                <p class="subtitle">Passionate about building innovative solutions through web development and machine learning</p>
+                <div class="header-buttons">
+                    <a href="#contact" class="btn primary">Let's Connect <i class="fas fa-arrow-right"></i></a>
+                    <a href="#projects" class="btn secondary">View Projects <i class="fas fa-code"></i></a>
+                </div>
             </div>
         </div>
     </header>
@@ -35,24 +42,24 @@
                 <div class="about-content">
                     <div class="about-text">
                         <h3>Hello, I'm Rohit!</h3>
-                        <p>I'm a Computer Science student with a passion for building innovative solutions. My work focuses on web development and machine learning, where I enjoy tackling complex challenges.</p>
-                        <a href="#projects" class="btn">View My Work <i class="fas fa-code"></i></a>
+                        <p>I'm a Computer Science student with a passion for building innovative solutions. My work focuses on web development and machine learning, where I enjoy tackling complex challenges and creating meaningful impact through technology.</p>
+                        <p>Currently pursuing B.E. in Computer Science and Engineering at KLE Technological University with a CGPA of 9.03. I have hands-on experience in full-stack development, machine learning, and computer vision projects.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="education" style="background-color: #f1f5f9;">
+        <section id="education" class="alt-bg">
             <div class="container">
                 <h2 class="section-title">Education</h2>
                 <div class="education">
                     <div class="education-item">
-                        <h3>KLE Technological University</h3>
-                        <div class="education-meta">
-                            <span><i class="fas fa-graduation-cap"></i> B.E. in Computer Science and Engineering</span>
-                            <span><i class="fas fa-star"></i> 9.03 CGPA</span>
+                        <div class="education-header">
+                            <h3>KLE Technological University</h3>
+                            <span class="cgpa">9.03 CGPA</span>
                         </div>
-                        <p>My coursework included advanced algorithms, machine learning, data structures, computer vision, and software engineering practices that have been instrumental in my professional journey.</p>
+                        <p class="degree">B.E. in Computer Science and Engineering</p>
+                        <p>Coursework: Advanced algorithms, machine learning, data structures, computer vision, and software engineering practices.</p>
                     </div>
                 </div>
             </div>
@@ -61,133 +68,118 @@
         <section id="projects">
             <div class="container">
                 <h2 class="section-title">Projects & Experience</h2>
-                <div class="projects-container">
-                    <div class="project-card">
+                <div class="projects-list">
+                    
+                    <div class="project-item">
+                        <div class="project-header">
+                            <h3>NVIDIA - Traffic Light Detection</h3>
+                            <span class="project-date">January 2025 - Present | Remote</span>
+                        </div>
+                        <div class="project-technologies">
+                            <span class="tech-tag">Computer Vision</span>
+                            <span class="tech-tag">YOLOX</span>
+                            <span class="tech-tag">Autonomous Driving</span>
+                        </div>
+                        <ul class="project-details">
+                            <li>Developing a YOLOX-based traffic light detection framework for autonomous driving</li>
+                            <li>Analyzing Bosch Small Traffic Lights Dataset with augmentation techniques</li>
+                            <li>Conducting experiments to evaluate YOLOX performance under diverse lighting conditions</li>
+                        </ul>
+                    </div>
+
+                    <div class="project-item">
                         <div class="project-header">
                             <h3>Multimodal Transformer Framework</h3>
                         </div>
-                        <div class="project-body">
-                            <div class="technologies">
-                                <span class="tech-tag">Machine Learning</span>
-                                <span class="tech-tag">Computer Vision</span>
-                                <span class="tech-tag">Autonomous Systems</span>
-                            </div>
-                            <ul>
-                                <li>Developed a lightweight multimodal transformer framework for estimating image differences in autonomous systems.</li>
-                                <li>Utilized the BDD100K dataset and Vision Transformer (ViT) for feature extraction, integrating multimodal models like OpenGVLab/Mini-InternVL-Chat-2B-V1-5.</li>
-                                <li>Designed the model for real-time analysis with low power usage, ensuring scalability for autonomous driving and robotic vision.</li>
-                            </ul>
+                        <div class="project-technologies">
+                            <span class="tech-tag">Machine Learning</span>
+                            <span class="tech-tag">Computer Vision</span>
+                            <span class="tech-tag">Autonomous Systems</span>
                         </div>
+                        <ul class="project-details">
+                            <li>Developed a lightweight multimodal transformer framework for estimating image differences in autonomous systems</li>
+                            <li>Utilized the BDD100K dataset and Vision Transformer (ViT) for feature extraction, integrating multimodal models like OpenGVLab/Mini-InternVL-Chat-2B-V1-5</li>
+                            <li>Designed the model for real-time analysis with low power usage, ensuring scalability for autonomous driving and robotic vision</li>
+                        </ul>
                     </div>
 
-                    <div class="project-card">
-                        <div class="project-header">
-                            <h3>NVIDIA - Traffic Light Detection</h3>
-                            <div class="project-date">January 2025 - Present | Remote</div>
-                        </div>
-                        <div class="project-body">
-                            <div class="technologies">
-                                <span class="tech-tag">Computer Vision</span>
-                                <span class="tech-tag">YOLOX</span>
-                                <span class="tech-tag">Autonomous Driving</span>
-                            </div>
-                            <ul>
-                                <li>Developing a YOLOX-based traffic light detection framework for autonomous driving.</li>
-                                <li>Analyzing Bosch Small Traffic Lights Dataset with augmentation techniques.</li>
-                                <li>Conducting experiments to evaluate YOLOX performance under diverse lighting conditions.</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="project-card">
+                    <div class="project-item">
                         <div class="project-header">
                             <h3>Online Course Enrollment System</h3>
-                            <div class="project-date">December 2024 - January 2025</div>
+                            <span class="project-date">December 2024 - January 2025</span>
                         </div>
-                        <div class="project-body">
-                            <div class="technologies">
-                                <span class="tech-tag">ReactJS</span>
-                                <span class="tech-tag">Express</span>
-                                <span class="tech-tag">MySQL</span>
-                                <span class="tech-tag">CSS</span>
-                            </div>
-                            <ul>
-                                <li>Developed an e-Course Enrollment System with user authentication, credit management, and course recommendations.</li>
-                                <li>Built a responsive UI with React.js and optimized backend with Node.js, Express.js, and MySQL.</li>
-                                <li>Implemented user-friendly interface that improved enrollment completion rates by 35%.</li>
-                            </ul>
+                        <div class="project-technologies">
+                            <span class="tech-tag">ReactJS</span>
+                            <span class="tech-tag">Express</span>
+                            <span class="tech-tag">MySQL</span>
+                            <span class="tech-tag">CSS</span>
                         </div>
+                        <ul class="project-details">
+                            <li>Developed an e-Course Enrollment System with user authentication, credit management, and course recommendations</li>
+                            <li>Built a responsive UI with React.js and optimized backend with Node.js, Express.js, and MySQL</li>
+                            <li>Implemented user-friendly interface that improved enrollment completion rates by 35%</li>
+                        </ul>
                     </div>
 
-                    <div class="project-card">
+                    <div class="project-item">
                         <div class="project-header">
                             <h3>Poetry Generation with GPT-Neo</h3>
                         </div>
-                        <div class="project-body">
-                            <div class="technologies">
-                                <span class="tech-tag">Machine Learning</span>
-                                <span class="tech-tag">Deep Learning</span>
-                                <span class="tech-tag">NLP</span>
-                            </div>
-                            <ul>
-                                <li>Fine-tuned GPT-Neo for poetry generation, enhancing rhyme structure and thematic consistency.</li>
-                                <li>Applied top-k sampling and temperature scaling to boost fluency and creativity.</li>
-                                <li>Achieved a 12.77% improvement in semantic coherence over GPT-4.</li>
-                            </ul>
+                        <div class="project-technologies">
+                            <span class="tech-tag">Machine Learning</span>
+                            <span class="tech-tag">Deep Learning</span>
+                            <span class="tech-tag">NLP</span>
                         </div>
+                        <ul class="project-details">
+                            <li>Fine-tuned GPT-Neo for poetry generation, enhancing rhyme structure and thematic consistency</li>
+                            <li>Applied top-k sampling and temperature scaling to boost fluency and creativity</li>
+                            <li>Achieved a 12.77% improvement in semantic coherence over GPT-4</li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="skills" style="background-color: #f1f5f9;">
+        <section id="skills" class="alt-bg">
             <div class="container">
                 <h2 class="section-title">Technical Skills</h2>
                 <div class="skills-container">
                     <div class="skill-category">
                         <h3>Programming Languages</h3>
-                        <ul class="skill-list">
-                            <li><i class="fas fa-check-circle"></i> C/C++ (Advanced)</li>
-                            <li><i class="fas fa-check-circle"></i> Python (Advanced)</li>
-                            <li><i class="fas fa-check-circle"></i> JavaScript (Intermediate)</li>
-                            <li><i class="fas fa-check-circle"></i> HTML/CSS (Intermediate)</li>
-                        </ul>
+                        <div class="skill-list">
+                            <span class="skill-item">C/C++ (Advanced)</span>
+                            <span class="skill-item">Python (Advanced)</span>
+                            <span class="skill-item">JavaScript (Intermediate)</span>
+                            <span class="skill-item">HTML/CSS (Intermediate)</span>
+                        </div>
                     </div>
 
                     <div class="skill-category">
                         <h3>Frameworks & Libraries</h3>
-                        <ul class="skill-list">
-                            <li><i class="fas fa-check-circle"></i> React.js</li>
-                            <li><i class="fas fa-check-circle"></i> Node.js</li>
-                            <li><i class="fas fa-check-circle"></i> Express.js</li>
-                            <li><i class="fas fa-check-circle"></i> PyTorch</li>
-                            <li><i class="fas fa-check-circle"></i> TensorFlow</li>
-                        </ul>
+                        <div class="skill-list">
+                            <span class="skill-item">React.js</span>
+                            <span class="skill-item">Node.js</span>
+                            <span class="skill-item">Express.js</span>
+                            <span class="skill-item">PyTorch</span>
+                            <span class="skill-item">TensorFlow</span>
+                        </div>
                     </div>
 
                     <div class="skill-category">
-                        <h3>Databases</h3>
-                        <ul class="skill-list">
-                            <li><i class="fas fa-check-circle"></i> MySQL</li>
-                            <li><i class="fas fa-check-circle"></i> MongoDB</li>
-                            <li><i class="fas fa-check-circle"></i> PostgreSQL</li>
-                        </ul>
-                    </div>
-
-                    <div class="skill-category">
-                        <h3>Developer Tools</h3>
-                        <ul class="skill-list">
-                            <li><i class="fas fa-check-circle"></i> Git & GitHub</li>
-                            <li><i class="fas fa-check-circle"></i> Docker</li>
-                            <li><i class="fas fa-check-circle"></i> VS Code</li>
-                            <li><i class="fas fa-check-circle"></i> Jupyter Notebooks</li>
-                        </ul>
+                        <h3>Databases & Tools</h3>
+                        <div class="skill-list">
+                            <span class="skill-item">MySQL</span>
+                            <span class="skill-item">MongoDB</span>
+                            <span class="skill-item">PostgreSQL</span>
+                            <span class="skill-item">Git & GitHub</span>
+                            <span class="skill-item">Docker</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="contact" style="background-color: #f1f5f9;">
+        <section id="contact">
             <div class="container">
                 <h2 class="section-title">Get in Touch</h2>
                 <div class="contact-container">
@@ -217,7 +209,7 @@
                             <label for="message">Message</label>
                             <textarea id="message" placeholder="Your Message" required></textarea>
                         </div>
-                        <button type="submit" class="btn">Send Message <i class="fas fa-paper-plane"></i></button>
+                        <button type="submit" class="btn primary">Send Message <i class="fas fa-paper-plane"></i></button>
                     </div>
                 </div>
             </div>
